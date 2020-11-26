@@ -3,10 +3,10 @@
     <h1>Beers</h1>
     <div class="main-container">
       <beers-list :beers='beers'></beers-list>
-      <beer-detail :beer="selectedBeer"></beer-detail>
+      <beer-detail :beer="selectedBeer" :beers='beers'></beer-detail>
       
     </div>
-    <button v-on:click="addToFav">Add to favourites</button>
+    <button v-if="!favouriteBeers.includes(selectedBeer)" v-on:click="addToFav">Add to favourites</button>
     <favourite-beers :favouriteBeers="favouriteBeers"></favourite-beers>
   </div>
 </template>
